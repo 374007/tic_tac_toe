@@ -21,6 +21,8 @@ int count_simbols (std::string tictactoe, char smbl )  {
 
 char simbol (std::string tictactoe, int x, int y) {
 
+    return tictactoe[(x+(y-1)*3)-1];
+
 }
 
 int main() {
@@ -34,6 +36,11 @@ int main() {
     std::cout<<count_simbols(tictactoe,'x')<<"-\n";
     std::cout<<count_simbols(tictactoe,'o')<<"-\n";
     std::cout<<count_simbols(tictactoe,'.')<<"-\n";
-
+   for (int i=1 ; i < 4; i++) {
+       for (int j=1; j < 4; j++) {
+           std::cout<<simbol(tictactoe,j,i)<<"-";
+       }
+       std::cout<<"-\n";
+   }
     return 0;
 }
