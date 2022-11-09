@@ -33,10 +33,10 @@ bool win (std::string tictactoe, char smbl) {
     for (int i = 1 ; i < 4; i++) {
         h = 0;
         v = 0;
-        if (simbol(tictactoe,i,i) == smbl)  d1++;
-        if (simbol(tictactoe,4-i,i) == smbl)  d2++;
+        if (simbol(tictactoe,i,i) == smbl) d1++;
+        if (simbol(tictactoe,4-i,i) == smbl) d2++;
         for (int j = 1; j < 4; j++) {
-            if (simbol(tictactoe,j,i) == smbl)  h++;
+            if (simbol(tictactoe,j,i) == smbl) h++;
             if (simbol(tictactoe,i,j) == smbl) v++;
         }
         if (h == 3 || v == 3) {
@@ -63,10 +63,10 @@ int main() {
        bool win_x = win(tictactoe,'X');
        bool win_o = win(tictactoe, 'O');
        if (win_x && win_o) std::cout << "Incorrect\n";
-       else if (win_x && !win_o && count_x==count_o+1) std::cout << "Petya won\n";
-       else if (!win_x && win_o && count_x+1==count_o) std::cout << "Vasiya won\n";
+       else if (win_x && !win_o && count_x == count_o+1) std::cout << "Petya won\n";
+       else if (!win_x && win_o && count_x + 1==count_o) std::cout << "Vasiya won\n";
        else if (win_x && count_x <= count_o || win_o && count_x >= count_o) std::cout << "Incorrect\n";
-       else if (count_x == count_o|| count_o == count_x+1 || count_x == count_o+1) std::cout << "Nobody\n";
+       else if (count_x == count_o|| count_o == count_x + 1 || count_x == count_o + 1) std::cout << "Nobody\n";
        else std::cout << "Incorrect\n";
     }
     else {
